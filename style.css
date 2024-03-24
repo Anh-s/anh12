@@ -1,0 +1,1390 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 70px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.3);
+}
+header.sticky{
+    background: rgba(255, 255, 255, 1);
+}
+header:hover{
+    background: rgba(255, 255, 255, 1);
+}
+.logo{
+    flex: 1;
+}
+
+.menu{
+    flex: 3;
+    display: flex;
+}
+.menu p{
+    color: red;
+}
+.menu > li{
+    padding: 0 12px;
+    position: relative;
+}
+.menu > li:hover .sub-menu{
+    visibility: visible;
+    top: 45px;
+}
+.sub-menu ul li:hover a{
+    color: #fed100;
+}
+.sub-menu-1 ul li:hover {
+    color: #fed100;
+}
+.sub-menu ul li:hover p{
+    color: #fed100;
+}
+.sub-menu{
+    position: absolute;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 10px 0 10px 20px;
+    visibility: hidden;
+    top: 60px;
+    transition: 0.3s;
+    z-index: 1;
+    background-color: #fff;
+    font-family: var(--main-text-font);
+}
+.sub-menu ul{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sub-menu ul li{
+    padding: 6px 0;
+}
+.sub-menu ul a{
+    font-weight: normal;
+    font-size: 20px;
+}
+.menu  li  a{
+    font-size: 15px;
+    font-weight: bold!important;
+    display: block;
+    line-height: 20px;
+}
+.sub-menu-1{
+    display: none;
+}
+.a:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: 209px;
+    background-color: #fff;
+    width: 150px;
+    transition: 0.3s;
+    border: 1px solid #ccc;
+    
+}
+.others{
+    flex: 1;
+    display: flex;
+}
+.others > li{
+    padding: 0 12px;
+    position: relative;
+}
+.others > li::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 50%;
+    background: #ddd;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.others > li:last-child::after{
+    display: none;
+}
+.others > li:first-child{
+    position: relative;
+}
+.others > li:first-child input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+    background: transparent;
+    outline: none;
+}
+.others > li:first-child i{
+    position: absolute;
+    right: 10px;
+}
+/*--------------------------slider----------------*/
+#slider{
+    padding-bottom: 30px;
+    border-bottom: 2px solid #000;
+    overflow: hidden;
+}
+.aspect-ratio-169 {
+    display: block;
+    position: relative;
+    padding-top: 56.25%;
+    transition: 0.3s;
+    
+}
+.aspect-ratio-169 img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.dot-container{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.dot{
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+}
+.dot.active{
+    background-color: #333;
+}
+/*-----------------footer-------------*/
+.footer {
+    padding: 100px 0 0;
+    border-top: 2px solid black;
+}
+.footer-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-container p{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: var(--main-text-font);
+}
+.app-google{
+    margin: 25px 0;
+}
+.app-google img{
+    height: 50px;
+    cursor: pointer;
+}
+.input-email{
+    position: relative;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+}
+.input-email input{
+    width: 100%;
+    border: none;
+    padding-bottom: 12px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+.input-email i{
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    cursor: pointer;
+}
+.footer-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+.footer-items li{
+    padding: 12px;
+    position: relative;
+}
+.footer-items li a{
+    color: #333;
+    font-family: var(--main-text-font);
+    font-weight: bold;
+    font-size: 12px;
+}
+.footer-items li::after{
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 50%;
+    background-color: #ccc;
+    right: 0;
+}
+.footer-items li:last-child::after{
+    display: none;
+}
+.footer-items li:last-child i{
+    font-size: 12px;
+    margin-right: 12px;
+    color: #333;
+}
+.footer-items li:last-child i:hover{
+    color: black;
+}
+.footer-items img{
+    width: 100px;
+}
+.footer-text{
+    text-align: center;
+    font-size: 12px;
+    font-family: var(--main-text-font);
+}
+.footer-bottom{
+    padding: 10px 0;
+    font-size: 12px;
+    font-family: var(--main-text-font);
+    background-color: #dddddd;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*--------------MD------------------*/
+
+.slider-product-one-content{
+    background-color: #fff;
+    padding: 12px;
+
+}
+.slider-product-one-content h2{
+    text-align: center;
+}
+.slider-product-one-content-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.slider-product-one-content-title h3{
+    font-style: italic;
+    padding: 12px 0;
+    text-align: center;
+    display: inline-block; 
+    margin-right: 20px;
+}
+.slider-product-one-content-items{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slider-product-one-content-item{
+    width: 19%;
+    background-color: #fff;
+    padding: 50px 12px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.slider-product-one-content-item img{
+    width: 100%;
+
+}
+
+.slider-product-one-content-item h1{
+    font-size: 11px;
+    font-family: var(--main-text-font);
+    margin-top: 6px;
+    color: #333333;
+    text-align: center;
+}
+.slider-product-one-content-item a:last-child {
+    text-decoration: line-through;
+    color: #333;
+}
+
+.slider-product-one-content-item p{
+    font-size: 12px;
+    text-align: center;
+}
+
+
+
+/*----------------slider-product---------------*/
+.slider-product-one-content-container{
+    position: relative;
+    overflow: hidden;
+}
+.slider-product-one-content-btn{
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+}
+.slider-product-one-content-btn i{
+    color: #333;
+    font-size: 32px;
+    height: 50px;
+    width: 25px;
+    background-color: #e7e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.slider-product-one-content-items-content{
+    position: relative;
+    height: 550px;
+    transition: all 0.5s ease;
+}
+.slider-product-one-content-items{
+    position: absolute;
+}
+.slider-product-one-content-items:nth-child(2){
+    transform: translateX(100%);
+}
+.slider-product-one-content-items:nth-child(3){
+    transform: translateX(200%);
+}
+
+.content {
+    text-align: center;
+    margin-top: 20px;
+}
+.text {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.hidden {
+    display: none;
+}
+
+
+/*---------------------cartegory---------*/
+.cartegory{
+    padding: 100px 0 0;
+}
+
+.cartegory-top  {
+    margin-bottom: 50px;
+    padding-left: 80px;
+}
+.cartegory-top p {
+    font-family: var(--main-text-font);
+    margin: 0 12px;
+    font-size: 12px;
+}
+.cartegory-left{
+    width: 20%;
+    padding-left: 100px;
+}
+.size-option {
+    cursor: pointer;
+}
+
+.size-option.active {
+    background-color: #813434; 
+}
+
+
+.color {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-option.selected {
+    border-color: black;
+}
+
+.color-option.selected::after {
+    content: '✔'; 
+    display: block;
+    text-align: center;
+    line-height: 30px; 
+    color: black; 
+    font-size: 20px; 
+}
+
+  
+  .yellow-flower {
+    background-color: #ffd700; 
+  }
+  .green-matcha {
+    background-color: #5f9ea0; 
+  }
+  .light-pink {
+    background-color: #ffb6c1; 
+  }
+  
+  .red-orange {
+    background-color: #ff4500; 
+  }
+  .deep-purple {
+    background-color: #8a2be2; 
+  }
+  .white {
+    background-color: #ffffff; 
+  }
+  .plum-purple {
+    background-color: #dda0dd; 
+  }
+  .smoke-purple {
+    background-color: #6a5acd; 
+  }
+  .mustard-yellow {
+    background-color: #ffdb58; 
+  }
+  .violet-pink {
+    background-color: #d8bfd8; 
+  }
+  .random-color {
+    background-color: #6c757d; 
+  }
+
+  .price-slider {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #000000;
+    cursor: pointer;
+  }
+  .discount-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 5px; 
+}
+
+.cartegory-left-button button{
+    width: 50px;
+    height: 40px;
+    display: block;
+    margin: 20px 0 12px;
+    transition: all 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; 
+    
+}
+
+.button-container button {
+    width: 100px;
+    height: 40px; 
+    background-color: #ffffff; 
+    color: black;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+
+}
+
+.button-container button:hover {
+    background-color: black; 
+    color: #fff;
+}
+
+
+#filterButton {
+    border: 2px solid #000; 
+}
+#resetButton{
+    border: 2px solid #000;
+}
+
+.moda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.moda button {
+    width: 100px;
+    height: 40px; 
+    background-color: #ffffff; 
+    color: black;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    text-align: center;
+}
+
+.moda button:hover {
+    background-color: black; 
+    color: #fff;
+}
+
+#filterButton p {
+    margin: 0;
+}
+.slider-product-one-content h1{
+    text-align: center;
+}
+
+
+.cartegory-right{
+    width: 80%;
+}
+.cartegory-right-top-item:first-child{
+    flex: 2;
+    font-size: 16px;
+    font-family: var(--main-text-font);
+    font-weight: bold;
+}
+.cartegory-right-top-item{
+    flex: 1;
+    padding: 0 12px ;
+}
+.cartegory-right-top-item button{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+.cartegory-right-top-item select{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+.cartegory-right-content{
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.cartegory-right-content-item{
+    width: calc(25% - 12px);
+    text-align: center;
+    padding: 12px 0;
+}
+.cartegory-right-content-item h1{
+    font-size: 11px;
+    font-family: var(--main-text-font);
+    margin-top: 6px;
+    color: #333333;
+}
+.cartegory-right-content-item a:last-child {
+    text-decoration: line-through;
+    color: #333;
+}
+.cartegory-right-content-item img{
+    width: 100%;
+}
+.cartegory-right-content-item p{
+    font-size: 12px;
+}
+
+
+.cartegory-right-top-items:first-child{
+    flex: 2;
+    font-size: 16px;
+    font-family: var(--main-text-font);
+    font-weight: bold;
+}
+.cartegory-right-top-items{
+    flex: 1;
+    padding: 0 12px ;
+}
+.cartegory-right-top-items button{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+.cartegory-right-top-items select{
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+.cartegory-right-content-items{
+    width: calc(20% - 12px);
+    text-align: center;
+    padding: 12px 0;
+}
+.cartegory-right-content-items h1{
+    font-size: 11px;
+    font-family: var(--main-text-font);
+    margin-top: 6px;
+    color: #333333;
+}
+.cartegory-right-content-items a:last-child {
+    text-decoration: line-through;
+    color: #333;
+}
+.cartegory-right-content-items img{
+    width: 100%;
+}
+.cartegory-right-content-items p{
+    font-size: 12px;
+}
+
+
+.cartegory-right-bottom{
+    justify-content: space-between;
+    margin: 30px 0 20px;
+    width: 100%;
+}
+.cartegory-right-bottom p{
+    font-family: var(--main-text-font);
+    font-size: 11px;
+}
+.cartegory-left ul li{
+    padding: 12px 0;
+}
+.cartegory-left ul li>a{
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--main-text-font);
+}
+.cartegory-left ul li ul li{
+    padding-left: 10px;
+}
+.cartegory-left-li ul{
+    display: none;
+}
+.cartegory-left-li.block ul{
+    display: block;
+}
+.cartegory-left ul li ul li a{
+    color: #333333;
+    font-size: 12px;
+}
+.cartegory-right-content-item img {
+    transition: transform 0.3s ease;
+}
+
+
+
+
+.c1 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/11/16/055ee2b6924333e8d2c5aa90c834e34d.JPG'); 
+}
+.c2 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/12/21/bb93f08a3313d20d65973f88c3d9b57d.JPG'); 
+}
+.c3 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/12/21/4958cd24c10174ac50a62dbaee6b2fa7.JPG'); 
+}
+.c4 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/02/01/699ee7363159730ed02e1c8c839fbf5b.jpg'); 
+}
+.c5 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/04/05ff4f978666b48a88a01849797af810.JPG'); 
+}
+.c6 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/22/60aad941648b59197eac563b91c400ea.jpg'); 
+}
+.c7 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/f87147ec64cc08b81155c9f374097e59.JPG'); 
+}
+.c8 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/04/b208a7fe6c451c6a8cc2b80d794f8f10.JPG'); 
+}
+.c9 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/93aa9fc71554555cd285a53bb996db59.JPG'); 
+}
+.c10 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/14/3a6c5b59806c10602ad26c651d832efd.jpg'); 
+}
+.c11 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/06/fe7f195b6cf8b74589dad51b28ebdfcb.jpg'); 
+}
+.c12 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/14/384551a2a1c0b753e19777a7cfb86400.jpg'); 
+}
+.c13 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/e4b89817f6ef0345b4d0b20c811bf415.jpg'); 
+}
+.c14 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/06/a9a5ae1da2209cf12aef6e55994f905f.jpg'); 
+}
+.c15 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/337b27bf9442765dcafceb0ab2b7fbf9.jpg'); 
+}
+.c16 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/ae221378f23080939ebbafe6c80383dc.jpg'); 
+}
+.c17 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/04/eafb9e217b050680a6a258f10259ab2a.JPG'); 
+}
+.c18 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/7f61f347e4fa45f0c193d0c60861a74d.jpg'); 
+}
+.c19 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/04/6e35149c773fe9adec1f3ef41df156c1.JPG'); 
+}
+.c20 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/04/89b123139141827a55211e25f7d50762.JPG'); 
+}
+.c21 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/eddb2e980b8f3be415f544a2fa5a4ae1.JPG'); 
+}
+.c22 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/67a7018c2dcefc6c70ff00a58ad42c93.jpg'); 
+}
+.c23 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/7967bd3297709186ca8ef2cf22fec176.jpg'); 
+}
+.c24 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/05/60680538d6cbbc694324b4703d55bf63.jpg'); 
+}
+.c25 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/12/26/68ccc7a73492e9a7fd1fe3226758e853.jpg'); 
+}
+.c26 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/14/422d05c7ddfb5cca541bf943ad07ed92.jpg'); 
+}
+.c27 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/12/20/43197758ce6426daeac6bb45596fedf7.JPG'); 
+}
+.c28 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2024/03/22/d4df1094a58a91722d06b9826b0484e1.jpg'); 
+}
+
+.e1 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2020/10/16/41b99472d2fb32e2b9f6e9ad15b22a53.JPG'); 
+}
+.e2 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/01/24/6b7ee6ea3eed3538e7bb45886187504c.JPG'); 
+}
+.e3 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/01/11/8d779281dbf5e8628b2e739f69a01049.JPG'); 
+}
+.e4 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/3c214b63ecc93d43df6d45e5f3ac8a59.JPG'); 
+}
+.e5 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2020/10/17/484ea973a7e7e89dd2aa6fceea0cadb9.JPG'); 
+}
+.e6 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/25/cf5cb1c5f7060a5cc19ab0ecf817580d.jpg'); 
+}
+.e7 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/01/24/8b66f7ef994f498ee89fbefaa2c53781.JPG'); 
+}
+.e8 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/11/04/567a746530d7fa09c1eb6f027ec2ca65.JPG'); 
+}
+.e9 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/03/29/742926cb74d2a12a994b361b4f47bf48.JPG'); 
+}
+.e10 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/09/11/c4783f1d8eeff17244e054dfe3d69a9f.JPG'); 
+}
+.e11 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2019/10/29/9f36e612abeb4ac7ec806b1e5d0f0024.jpg'); 
+}
+.e12 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/07/19/ffa850ca2f9c1e84460152587cceec9c.jpg'); 
+}
+.e13 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/11/04/e31b0d96688e16eb55071128f8cd4ae1.JPG'); 
+}
+.e14 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2020/10/14/72c6015580f48a3a00053ca342d8c76b.JPG'); 
+}
+.e15 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/08/03/b77147765932cb378649a5e8e3dda4f2.JPG'); 
+}
+.e16 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/10/18/a597b4f2855424690e8f617acaae68c5.JPG'); 
+}
+.e17 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/04/14/56519b271465288f8c0c3863ededb044.jpg'); 
+}
+.e18 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/11/04/3dc1896583e092cbe047553a7f29e80a.JPG'); 
+}
+.e19 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2019/12/17/6189a53fccd99fa3bae99aafe6414ffa.jpg'); 
+}
+.e20 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2019/12/04/7235813fca4390df20f845f55639be62.jpg'); 
+}
+.e21 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2017/07/11/f73244178e9e567f7eb23d273ca8dc51.jpg'); 
+}
+.e22 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/03/29/52a2ea878c897aef6f2539b38d609fbd.JPG'); 
+}
+.e23 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2020/12/03/5d4ea2ac2a4bac0f73e29a32ee6ea33e.JPG'); 
+}
+.e24 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/12/31/5322b17ec420bdbe684aab50a3b92d51.jpg'); 
+}
+.e25 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/01/11/e4e1b6e299d2caf378b7a46339a83479.JPG'); 
+}
+.e26 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/11/04/b384b51f39d1545fc2de43fae41924db.JPG'); 
+}
+.e27 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/08/03/f36459d957e6b15988d69aa0dcbf741f.JPG'); 
+}
+.e28 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2021/02/19/85c2172c0898d64d2e1b92e35ebc9d6a.JPG'); 
+}
+
+
+.f1 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/09/009b8dfd97f76711f50f3b8d246e2a6c.jpg'); 
+}
+.f2 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/09/387fbc00ff8689614973f5e1505e50b6.jpg'); 
+}
+.f3 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/19052e45409a4b2867dd4fba061024d1.jpg'); 
+}
+.f4 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/0e9e1a01e7ca0262f7bf88e92b95bae9.jpg'); 
+}
+.f5 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/16/f1311b08999adb8f81e022597e4ed35e.jpg'); 
+}
+.f6 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/ed47069ba9a8c1d60033268237201600.jpg'); 
+}
+.f7 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/4251800ce87102a5b7c9221dd3bf9a5b.jpg'); 
+}
+.f8 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/b28406d0bea0193fd9a83fb5e2df00c3.jpg'); 
+}
+.f9 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/0b392403013cd9e648c554f363418735.jpg'); 
+}
+.f10 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/69d9fdfad3b47c5da4bd29104b0cb54e.jpg'); 
+}
+.f11 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/01/13/b94c5a593feabed9545b62d3e4a926ab.jpg'); 
+}
+.f12 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/7bf2f34b528f065f055715a9562735a1.jpg'); 
+}
+.f13 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/7e0a76d8b1997d74aebe6fee5d407749.jpg'); 
+}
+.f14 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/09/62223e9b7399545dacea9d03d299d321.jpg'); 
+}
+.f15 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/01/13/dcc3d658687ab693bd852c9c24af8acc.jpg'); 
+}
+.f16 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/35ce40da055a67ba33371e22a984e521.jpg'); 
+}
+.f17 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/10/12/a3056836b8e507f83d3787c64ba5a3b5.jpg'); 
+}
+.f18 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/15/91c543c728f1d6bd1a2ed0580781408c.jpg'); 
+}
+.f19 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/e89e190f8a9d3b036cdd03b9c3673b17.jpg'); 
+}
+.f20 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/dcfe7c4b0dce28b3e2916b33f3fa9181.jpg'); 
+}
+.f21 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/4dcf7692ba13f0179380eee90f353a52.jpg'); 
+}
+.f22 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/09/13/77553e438bdbbf27dde98d019217415e.jpg'); 
+}
+.f23 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/06/15/62acc91d7c9ee5b1bce8cc98732505dd.JPG'); 
+}
+.f24 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/04/05/f031f2bf8bb53e70b7b44943949df11b.jpg'); 
+}
+.f25 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/04/05/2eb823d033be51cd9b22c74eb47e1e2c.jpg'); 
+}
+.f26 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/04/27/25dfca114f11a2b2c8e8f6f8de04501f.jpg'); 
+}
+.f27 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2023/04/05/ce34d2993b11de60a2b767c4777d7b73.jpg'); 
+}
+.f28 img:first-child:hover {
+    content: url('https://pubcdn.ivymoda.com/files/product/thumab/1400/2022/12/30/7cde2409d7f4b55f725ad254c2de90ce.jpg'); 
+}
+
+
+
+.color-c {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.color-cc {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color-cc.selected {
+    border-color: black;
+}
+
+.color-cc.selected::after {
+    content: '✔'; 
+    display: block;
+    text-align: center;
+    line-height: 15px; 
+    color: black; 
+    font-size: 10px; 
+}
+
+.C6B29{
+    background-color: #C6B297;
+}
+.mc2a{
+    background-color: #696968;
+}
+.mc2b3{
+    background-color: #63626A;
+}
+.C1B094{
+    background-color: #C1B094;
+}
+.C9AC85{
+    background-color: #C9AC85;
+}
+.mc4{
+    background-color: #6A6D6E;
+}
+
+.BD9E78{
+    background-color: #bd9e78;
+}
+.mc6{
+    background-color: #2E2E2E;
+}
+.mc6a{background-color: #5B5240;}
+.F3EC94{
+    background-color: #F3EC94;
+}
+.A88281{
+    background-color: #A88281;
+}
+.BF7880{
+    background-color: #BF7880;
+}
+.C7B69A{
+    background-color: #C7B69A;
+}
+.mc9{
+    background-color: #8A9C4A;
+}
+.mc10{
+    background-color: #2F3130;
+}
+.C8AD7E{
+    background-color: #C8AD7E;
+}
+.A3784E{
+    background-color: #A3784E;
+}
+.EB6995{
+    background-color: #EB6995;
+}
+.F2B8C6{
+    background-color: #F2B8C6;
+}
+.C3A57F{
+    background-color: #C3A57F;
+}
+.A898BD{
+    background-color: #A898BD;
+}
+.E8AF91{
+    background-color: #E8AF91;
+}
+.CBAE83{
+    background-color: #CBAE83;
+}
+.C8AA85{
+    background-color: #C8AA85;
+}
+.AC3329{
+    background-color: #AC3329;
+}
+.mc21a{
+    background-color: #67818A;
+}
+.mc21b{
+    background-color: #264D7E;
+}
+.CBC6BC{
+    background-color: #CBC6BC;
+}
+.D4A2AE{
+    background-color: #D4A2AE;
+}
+.B1282A{
+    background-color: #B1282A;
+}
+.F2EB93P{
+    background-color: #F2EB93;
+}
+.A13428{
+    background-color: #A13428;
+}
+.mc24a{
+    background-color: #6A868F;
+}
+.mc24b{
+    background-color: #264F85;
+}
+.C7AA81{
+    background-color: #C7AA81;
+}
+.mc25a{
+    background-color: #324436;
+}
+.B27F8D{
+    background-color: #B27F8D;
+}
+.F2BCC3{
+    background-color: #F2BCC3;
+}
+.mc25b{
+    background-color: #7F9EA9;
+}
+.mc25c{
+    background-color: #72918F;
+}
+.A38F1E{
+    background-color: #A38F1E;
+}
+.mc26{
+    background-color: #952032;
+}
+
+.me1{
+    background-color: #6F6E6E;
+}
+.D0C2AB{
+    background-color: #D0C2AB;
+}
+.me1a{
+    background-color: #2F2F2F;
+}
+.me2{
+    background-color: #365552;
+}
+.CCB495{background-color: #CCB495;}
+.me3{background-color: #324E5B;}
+.me4{ background-color: #6B6C6C;}
+.AAAAA8{background-color: #AAAAA8;}
+.me5{background-color: #39476B;}
+.EAE4D8{background-color: #EAE4D8;}
+.me7{background-color: #682632;}
+.me8{background-color: #485C66;}
+.me8a{background-color: #45262A;}
+.me9{background-color: #6C6C6D;}
+.B89C77{background-color: #B89C77;}
+.me12{background-color: #7EA0AB;}
+.BFAC91{background-color: #BFAC91;}
+.C9A6AD{background-color: #C9A6AD;}
+.me14{background-color: #9B7078;}
+.me14a{background-color: #3A486C;}
+.me15{background-color: #80A0AF;}
+.me15a{background-color: #6C6E6E;}
+.me16{background-color: #C6A983;}
+.me17{background-color: #364469;}
+.me19{background-color: #304063;}
+.me20{background-color: #6C6F76;}
+.me21{background-color: #4F2B38;}
+.me22{background-color: #474747;}
+.me22a{background-color: #333743;}
+.me23{background-color: #7CA2AB;}
+.me23a{background-color: #344267;}
+.C2B296{background-color: #C2B296;}
+.C6A884{background-color: #C6A884;}
+.me23b{background-color: #6A6A6B;}
+.me23c{background-color: #404040;}
+.me23d{background-color: #696674;}
+.me24{background-color: #4D636E;}
+.A7918A{background-color: #A7918A;}
+.me24a{background-color: #355351;}
+.me24b{background-color: #334166;}
+.me24c{background-color: #61362E;}
+.me25{background-color: #4B606C;}
+.me25a{background-color: #61362F;}
+.m26{background-color: #4C616E;}
+.me27{background-color: #7EA2AC;}
+.me27a{background-color: #486469;}
+.AEC14E{background-color: #AEC14E;}
+.FB8C34{background-color: #FB8C34;}
+.mf2{background-color: #2A5E46;}
+.B17F89{background-color: #B17F89;}
+.ED6A96{background-color: #ED6A96;}
+.F7D1D9{background-color: #F7D1D9;}
+.AD6679{background-color: #AD6679;}
+.mf7{background-color: #2D5C9A;}
+.mf7a{background-color: #3A5B57;}
+.mf8{background-color: #8D2935;}
+.F16F9A{background-color: #F16F9A;}
+.mf11{background-color: #496269;}
+.EF6A97{background-color: #EF6A97;}
+.CA9AA3{background-color: #CA9AA3;}
+.CCAC83{background-color: #CCAC83;}
+.mf14{background-color: #68686A;}
+.mf14a{background-color: #334061;}
+.B4818C{background-color: #B4818C;}
+.mf16{background-color: #1886A0;}
+.F2B9C6{background-color: #F2B9C6;}
+.F2B8C4{background-color: #F2B8C4;}
+.B32626{background-color: #B32626;}
+.mf18{background-color: #354368;}
+.CBAF85{background-color: #CBAF85;}
+.mf19{background-color: #2B5E45;}
+.mf20{background-color: #313F65;}
+.C9AB80{background-color: #C9AB80;}
+.mf22{background-color: #87203D;}
+.FB8E36{background-color: #FB8E36;}
+.mf24{background-color: #319E5B;}
+.F5BBC9{background-color: #F5BBC9;}
+.B68190{background-color: #B68190;}
+.CAAE7F{background-color: #CAAE7F;}
+.C6A982{background-color: #C6A982;}
+
+/*------------------------Lien-he--------------------*/
+.cartegory{
+    padding: 100px 0 0;
+}
+
+.cartegory-top  {
+    margin-bottom: 50px;
+    padding-left: 80px;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.login-form h2, p {
+    margin-bottom: 20px;
+}
+
+input[type="texta"],
+input[type="passworda"],
+button,
+.login-form a {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    background-color: #020202;
+    color: #fff;
+    cursor: pointer;
+}
+#filterButton {
+    border: 2px solid #000; 
+}
+#resetButton{
+    border: 2px solid #000;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.submit button {
+    width: 350px;
+    height: 40px; 
+    background-color: #ffffff; 
+    color: black;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit button:hover {
+    background-color: black; 
+    color: #fff;
+}
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options label {
+    display: inline-block;
+}
+
+
+/*--------------------SH--------------------*/
+.sh {
+    text-align: center; 
+}
+
+.sh-a {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+.sh-b{
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.sh-b {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+}
+
+.sh-b-c img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sh-b-c:last-child {
+    margin-right: 0; 
+}
+
+.sh-b-c{
+    width: calc(25% - 15px);
+    text-align: center;
+    padding: 12px 0;
+}
+.sh-b-c img{
+    width: 350px;
+    height: 350px;
+
+}
+
+.sh-b-c-d img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sh-b-c-d:last-child {
+    margin-right: 0; 
+}
+
+.sh-b-c-d{
+    width: calc(20% - 12px);
+    text-align: center;
+    padding: 12px 0;
+}
+.sh-b-c-d img{
+    width: 280px;
+    height: 280px;
+
+}
